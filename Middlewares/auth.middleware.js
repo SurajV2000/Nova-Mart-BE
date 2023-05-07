@@ -7,8 +7,8 @@ const auth = (req, res, next) => {
       const decoded = jwt.verify(token.split(" ")[1], "masai");
       if (decoded) {
         req.body.authorID = decoded.authorID;
-        req.body.author = decoded.author;
-        console.log(req.body);
+        // req.body.author = decoded.author;
+        // console.log(req.body);
         next();
       } else {
         res.send({ msg: "Please Login" });

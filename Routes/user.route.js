@@ -4,6 +4,11 @@ var jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { UserModel } = require("../Models/user.model");
 
+userRouter.get("/", async (req, res) => {
+  const data = await UserModel.find()
+  res.status(200).send(data)
+});
+
 userRouter.post("/register", async (req, res) => {
   const { email, pass, name, age } = req.body;
   try {
@@ -39,10 +44,6 @@ userRouter.post("/login", async (req, res) => {
     }
   } catch (error) {
     res.status(400).send({ err: error.message });
-  }
-  const user = await UserModel.findOne({ email, pass });
-  if (user) {
-    console.log("login");
   }
 });
 

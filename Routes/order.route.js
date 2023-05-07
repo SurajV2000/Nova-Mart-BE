@@ -12,9 +12,11 @@ orderRouter.get("/", async (req, res) => {
 });
 
 orderRouter.post("/add", async (req, res) => {
-  try {
-    const order = new OrderModel(req.body);
-    await order.save();
+    try {
+
+        // const order =
+            await OrderModel.insertMany(req.body);
+    // await order.save();
     res.status(200).send({ msg: "Created order" });
   } catch (error) {
     res.status(400).send({ msg: error.message });
