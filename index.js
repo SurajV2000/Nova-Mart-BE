@@ -8,7 +8,10 @@ const { electronicRouter } = require("./Routes/electronic.route");
 const { orderRouter } = require("./Routes/order.route");
 
 const app = express();
+const cors = require("cors");
+
 app.use(express.json());
+app.use(cors());
 app.use("/users", userRouter);
 app.use("/pharma", pharmaRouter);
 app.use("/electronic", electronicRouter);
