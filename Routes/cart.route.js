@@ -46,6 +46,15 @@ const cartRouter = express.Router();
   } catch (error) {
     res.status(400).send({ msg: error.message });
   }
-});
+ });
+
+cartRouter.delete("/deleteAll", async (req, res) => {
+   try {
+     await CartModel.deleteMany({ authorID: req.body.authorID });
+     res.status(200).send({"msg":"Successfully Deleted all items from cart"})
+   } catch (error) {
+    res.status(400).send({"msg":error.message})
+   }
+ })
 
 module.exports = { cartRouter };
