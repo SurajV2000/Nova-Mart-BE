@@ -8,9 +8,9 @@ const queryObj = {};
 const sortObj = {};
 const { price, brand_name, limit, page } = req.query;
 if (price) {
-  if (price == "asc" || price == "ASC") {
+  if (price == "asc") {
     sortObj.price = 1;
-  } else if (price == "dsc" || price == "DSC") {
+  } else if (price == "desc") {
     sortObj.price = -1;
   }
 }
