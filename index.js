@@ -12,13 +12,6 @@ const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
-app.use("/", (req,res) => {
-  try {
-    res.status(200).send("WELCOME TO NOVAMART BACKEND 😊");
-  } catch (error) {
-    
-  }
-})
 app.use("/users", userRouter);
 app.use("/pharma", pharmaRouter);
 app.use("/electronic", electronicRouter);
