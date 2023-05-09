@@ -21,7 +21,7 @@ const cartRouter = express.Router();
 });
  cartRouter.patch("/update/:cartID", async (req, res) => {
   const { cartID } = req.params;
-  const cart = await CartModel.findOne({ _id: cartID });
+  let cart = await CartModel.findOne({ _id: cartID });
   try {
     if (req.body.authorID !== cart.authorID) {
       res.status(200).send("You are not authorised for this");
