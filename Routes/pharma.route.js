@@ -10,7 +10,8 @@ const { price, brand_name, limit, page } = req.query;
 if (price) {
   if (price == "asc") {
     sortObj.price = 1;
-  } else if (price == "desc") {
+  }
+  if (price == "desc") {
     sortObj.price = -1;
   }
 }
