@@ -16,7 +16,8 @@ if (_sort) {
   }
 }
 if (brand_name) {
-  queryObj.brand_name = { $regex: brand_name, $options: "i" };
+  queryObj.brand_name = {$in:brand_name};
+  // { $regex: brand_name, $options: "i" }
 }
 let Limit;
 if (_limit) {
