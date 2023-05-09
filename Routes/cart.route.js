@@ -28,7 +28,7 @@ const cartRouter = express.Router();
     } else {
       await CartModel.findByIdAndUpdate({ _id: cartID },req.body);
       cart = await CartModel.findOne({ _id: cartID });
-      res.status(200).send({"msg":"data IS BEEDN updated","data":cart});
+      res.status(200).send({"msg":"Cart data is updated successfully","data":cart});
     }
   } catch (error) {
     res.status(400).send({ msg: error.message });
