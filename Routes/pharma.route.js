@@ -9,10 +9,10 @@ const sortObj = {};
 const { sort, brand_name, limit, page } = req.query;
 if (sort) {
   if (sort == "asc") {
-    sortObj.price = 1;
+    sortObj[sort] = 1;
   }
   if (sort == "desc") {
-    sortObj.price = -1;
+    sortObj[sort] = -1;
   }
 }
 if (brand_name) {
