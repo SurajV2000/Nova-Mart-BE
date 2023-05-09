@@ -6,7 +6,7 @@ pharmaRouter.get("/", async (req, res) => {
 
 const queryObj = {};
 const sortObj = {};
-const { _sort,_order, brand_name, limit, page } = req.query;
+const { _sort,_order, brand_name, _limit, page } = req.query;
 if (_sort) {
   if (_order == "asc") {
     sortObj[_sort] = 1;
@@ -19,8 +19,8 @@ if (brand_name) {
   queryObj.brand_name = { $regex: brand_name, $options: "i" };
 }
 let Limit;
-if (limit) {
-  Limit = limit;
+if (_limit) {
+  Limit = _limit;
 }
 
   try {
