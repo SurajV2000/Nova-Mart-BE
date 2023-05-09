@@ -12,15 +12,20 @@ const cors = require("cors");
 
 app.use(express.json());
 app.use(cors());
+app.use("/", (req,res) => {
+  try {
+    res.status(200).send("WELCOME TO NOVAMART BACKEND 😊");
+  } catch (error) {
+    
+  }
+})
 app.use("/users", userRouter);
 app.use("/pharma", pharmaRouter);
 app.use("/electronic", electronicRouter);
 app.use("/order",orderRouter)
 app.use(auth);
 app.use("/cart", cartRouter);
-app.get("/movie", (req, res) => {
-  res.status(200).send("Movie data");
-});
+
 
 app.listen(5050, async () => {
   try {
