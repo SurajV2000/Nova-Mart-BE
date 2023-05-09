@@ -6,12 +6,12 @@ pharmaRouter.get("/", async (req, res) => {
 
 const queryObj = {};
 const sortObj = {};
-const { price, brand_name, limit, page } = req.query;
-if (price) {
-  if (price == "asc") {
+const { sort, brand_name, limit, page } = req.query;
+if (sort) {
+  if (sort == "asc") {
     sortObj.price = 1;
   }
-  if (price == "desc") {
+  if (sort == "desc") {
     sortObj.price = -1;
   }
 }
