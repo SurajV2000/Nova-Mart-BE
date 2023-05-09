@@ -26,7 +26,7 @@ const cartRouter = express.Router();
     if (req.body.authorID !== cart.authorID) {
       res.status(200).send("You are not authorised for this");
     } else {
-      await CartModel.findByIdAndUpdate({ _id: cartID });
+      await CartModel.findByIdAndUpdate({ _id: cartID },req.body);
       cart = await CartModel.findOne({ _id: cartID });
       res.status(200).send({"msg":"data IS BEEDN updated","data":cart});
     }
