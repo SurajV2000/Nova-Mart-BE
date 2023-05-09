@@ -18,7 +18,7 @@ if (sort) {
 if (brand_name) {
   queryObj.brand_name = { $regex: brand_name, $options: "i" };
 }
-let Limit = 0;
+let Limit;
 if (limit) {
   Limit = limit;
 }
