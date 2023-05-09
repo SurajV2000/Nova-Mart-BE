@@ -35,7 +35,7 @@ const cartRouter = express.Router();
 });
  cartRouter.delete("/delete/:cartID", async (req, res) => {
   const { cartID } = req.params;
-  const cart = await CartModel.findOne({ _id: cartID });
+  const cart = await CartModel.findOne({ _id: cartID },req.body);
   try {
     if (req.body.authorID !== cart.authorID) {
       res.status(200).send("You are not authorised for this");
