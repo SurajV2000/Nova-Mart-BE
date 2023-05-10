@@ -19,7 +19,7 @@ if (brand_name) {
   queryObj.brand_name = {$in:brand_name};
   // { $regex: brand_name, $options: "i" }
 }
-let Limit;
+let Limit=9;
 if (_limit) {
   Limit = _limit;
 }
